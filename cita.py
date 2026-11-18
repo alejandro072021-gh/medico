@@ -4,8 +4,7 @@ class Cita:
         self._paciente=paciente
         self._medico=medico
         self._fecha=fecha
-
-
+        self._estado="Pendiente"
     #Getters
     @property
     def codigo(self):
@@ -19,7 +18,9 @@ class Cita:
     @property
     def fecha(self):
         return self._fecha
-
+    @property
+    def estado(self):
+        return self._estado
     #Setters
     @codigo.setter
     def codigo(self, valor):
@@ -33,7 +34,8 @@ class Cita:
     @fecha.setter
     def fecha(self, valor):
         self._fecha = valor
-
-
+    @estado.setter
+    def estado(self, valor):
+        self._estado = valor
     def resumen(self):
-        return f"{self._codigo} - {self._paciente.nombre} con el Dr. {self._medico.nombre} el {self._fecha}"
+        return f"{self._codigo} - {self._paciente.nombre} con el Dr. {self._medico.nombre} el {self._fecha} - {self._estado}"
